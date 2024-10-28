@@ -65,7 +65,7 @@ user_data = pd.DataFrame({
         'mainroad': [mainroad],
         'airconditioning': [airconditioning],
         'parking': [int(parking)],
-        'prefarea'[prefarea],
+        'prefarea':[prefarea],
         'furnishingstatus': [furnishingstatus]
     })
 st.dataframe(user_data)
