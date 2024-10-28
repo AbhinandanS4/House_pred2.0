@@ -76,7 +76,7 @@ if st.button("Predict"):
     user_data['mainroad'] = le.fit_transform(user_data['mainroad'])
     user_data['airconditioning'] = le.fit_transform(user_data['airconditioning'])
     user_data['furnishingstatus'] = le.fit_transform(user_data['furnishingstatus'])
-    user_data['prefarea']=le.fit_tranform(user_data['prefarea'])
+    user_data['prefarea']=le.fit_transform(user_data['prefarea'])
 
     # Make prediction
     prediction = model.predict(user_data)[0]
