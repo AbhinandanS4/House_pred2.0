@@ -10,14 +10,17 @@ df = pd.read_csv("Housing.csv")
 # Drop any features you do not want to use in the model
 df.drop(columns=['guestroom', 'basement', 'hotwaterheating'], inplace=True)
 
-# Initialize LabelEncoder
-le = LabelEncoder()
+# Initialize LabelEncoder and fit it on the full dataset
+le_mainroad = LabelEncoder()
+le_airconditioning = LabelEncoder()
+le_furnishingstatus = LabelEncoder()
+le_prefarea = LabelEncoder()
 
 # Encode categorical features in the full dataset
-df['mainroad'] = le.fit_transform(df['mainroad'])
-df['airconditioning'] = le.fit_transform(df['airconditioning'])
-df['furnishingstatus'] = le.fit_transform(df['furnishingstatus'])
-df['prefarea'] = le.fit_transform(df['prefarea'])
+df['mainroad'] = le_mainroad.fit_transform(df['mainroad'])
+df['airconditioning'] = le_airconditioning.fit_transform(df['airconditioning'])
+df['furnishingstatus'] = le_furnishingstatus.fit_transform(df['furnishingstatus'])
+df['prefarea'] = le_prefarea.fit_transform(df['prefarea'])
 
 # Features and target variable
 X = df.drop(columns=['price'])
@@ -77,10 +80,10 @@ st.dataframe(user_data)
 # Predict button
 if st.button("Predict"):
     # Encode user input using the same label encoders
-    user_data['mainroad'] = le.transform(user_data['mainroad'])
-    user_data['airconditioning'] = le.transform(user_data['airconditioning'])
-    user_data['furnishingstatus'] = le.transform(user_data['furnishingstatus'])
-    user_data['prefarea'] = le.transform(user_data['prefarea'])
+    user_data['mainroad'] = le_mainroad.transform(user_data['mainroad'])
+    user_data['airconditioning'] = le_airconditioning.transform(user_data['airconditioning'])
+    user_data['furnishingstatus'] = le_furnishingstatus.transform(user_data['furnishingstatus'])
+    user_data['prefarea'] = le_prefarea.transform(user_data['prefarea'])
 
     # Make prediction
     prediction = model.predict(user_data)[0]
