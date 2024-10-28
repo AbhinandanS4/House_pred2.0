@@ -45,7 +45,17 @@ def lr_prediction_range(model, X_new):
     lower_bound = predictions - margin_of_error
     upper_bound = predictions + margin_of_error
     return lower_bound, upper_bound
-
+def format_indian_number(num):
+    num_str = str(int(num))
+    if len(num_str) > 3:
+        # Split into the last three digits and the rest
+        last_three = num_str[-3:]
+        other_digits = num_str[:-3]
+        if other_digits:
+            return f"{other_digits},{last_three}"
+        else:
+            return last_three
+    return num_str
 # Streamlit app UI
 st.title("House Price Predictor")
 selection = st.selectbox("Select Your Prediction Type", ['Ranged', 'Discrete'])
@@ -91,9 +101,10 @@ if st.button("Predict"):
 
     # Display results
     if selection == 'Ranged':
-        st.write(f"Your House will cost in range: ₹{round(lower_bound[0], 2)} - ₹{round(upper_bound[0], 2)}")
+        st.write(f"Your House will cost in range: ₹{format_indian_number(round(lower_bound[0], 2))} - ₹{format_indian_number(round(upper_bound[0], 2))}")
     elif selection == 'Discrete':
-        st.write(f"Estimated Cost of the House will be: ₹{round(prediction, 2)}")
+        st.write(f"Estimated Cost of the House will be: ₹{format_indian_number(round(prediction, 2))}")
+
 
 # Feedback section
 st.write("### We Value Your Feedback!")
