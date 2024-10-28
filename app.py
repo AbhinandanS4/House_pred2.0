@@ -54,7 +54,7 @@ stories = st.text_input('Stories:')
 parking = st.text_input('Parkings Available:')
 mainroad = st.selectbox("Main Road", ['yes', 'no'])
 airconditioning = st.selectbox("Air Conditioning?", ['yes', 'no'])
-prefarea=st.selectbox("Prefered Area?"['yes','no'])
+prefarea=st.selectbox("Prefered Area?",['yes','no'])
 furnishingstatus = st.selectbox("Furnishing Status", ['furnished', 'semi-furnished', 'unfurnished'])
 # Prepare input data based on user input
 user_data = pd.DataFrame({
