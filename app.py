@@ -47,18 +47,18 @@ selection = st.selectbox("Select Your Prediction Type", ['Ranged', 'Discrete'])
 
 # Collecting user input
 st.write("Please Select The Features of Your House")
-area = st.text_input("Area:")
-bedrooms = st.text_input('Bedrooms:')
-bathrooms = st.text_input('Bathrooms:')
-stories = st.text_input('Stories:')
-parking = st.text_input('Parkings Available:')
+area = st.slider("Area (in sq ft.):",100,17000,5000)
+bedrooms=st.slider('Bedrooms:',0,15,10)
+bathrooms=st.slider('Bathrooms:',0,15,10)
+stories=st.slider('Stories:',0,10,5)
+parking=st.slider('Parkings Available:',0,5,2)
 mainroad = st.selectbox("Main Road", ['yes', 'no'])
 airconditioning = st.selectbox("Air Conditioning?", ['yes', 'no'])
 prefarea=st.selectbox("Prefered Area?",['yes','no'])
 furnishingstatus = st.selectbox("Furnishing Status", ['furnished', 'semi-furnished', 'unfurnished'])
 # Prepare input data based on user input
 user_data = pd.DataFrame({
-        'area': [float(area)],
+        'area': [(area)],
         'bedrooms': [int(bedrooms)],
         'bathrooms': [int(bathrooms)],
         'stories': [int(stories)],
