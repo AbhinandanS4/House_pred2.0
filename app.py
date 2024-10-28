@@ -54,7 +54,6 @@ stories = st.text_input('Stories:')
 parking = st.text_input('Parkings Available:')
 mainroad = st.selectbox("Main Road", ['yes', 'no'])
 airconditioning = st.selectbox("Air Conditioning?", ['yes', 'no'])
-prefarea=st.selectbox("Preferred Area?",['yes','no'])
 furnishingstatus = st.selectbox("Furnishing Status", ['furnished', 'semi-furnished', 'unfurnished'])
 # Prepare input data based on user input
 user_data = pd.DataFrame({
@@ -65,7 +64,6 @@ user_data = pd.DataFrame({
         'mainroad': [mainroad],
         'airconditioning': [airconditioning],
         'parking': [int(parking)],
-        'prefarea': [prefarea],
         'furnishingstatus': [furnishingstatus]
     })
 st.dataframe(user_data)
@@ -76,7 +74,6 @@ if st.button("Predict"):
     user_data['mainroad'] = le.fit_transform(user_data['mainroad'])
     user_data['airconditioning'] = le.fit_transform(user_data['airconditioning'])
     user_data['furnishingstatus'] = le.fit_transform(user_data['furnishingstatus'])
-    user_data['prefarea']=le.fit_transform(user_data['prefarea'])
 
     # Make prediction
     prediction = model.predict(user_data)[0]
