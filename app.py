@@ -48,13 +48,14 @@ def lr_prediction_range(model, X_new):
 def format_indian_number(num):
     num_str = str(int(num))
     if len(num_str) > 3:
-        # Split into the last three digits and the rest
         last_three = num_str[-3:]
         other_digits = num_str[:-3]
-        if other_digits:
-            return f"{other_digits},{last_three}"
-        else:
-            return last_three
+        formatted_number = ""
+        while len(other_digits) > 2:
+            formatted_number = ',' + other_digits[-2:] + formatted_number
+            other_digits = other_digits[:-2]
+        formatted_number = other_digits + formatted_number
+        return formatted_number + ',' + last_three
     return num_str
 # Streamlit app UI
 st.title("House Price Predictor")
