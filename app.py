@@ -110,7 +110,6 @@ if st.button("Predict"):
     elif selection == 'Discrete':
         st.write(f"Estimated Cost of the House will be: ₹{format_indian_number(round(prediction, 2))}")
       
-st.title("Feedback Form")
 
 # Create a form
 with st.expander("Please Give your Valuable Feedback!!"):
