@@ -105,7 +105,7 @@ user_data = pd.DataFrame({
     'prefarea': [prefarea],
     'furnishingstatus': [furnishingstatus]
 })
-
+st.divider()
 st.dataframe(user_data,hide_index=True)
 selection = st.selectbox("Select Your Prediction Type", ['Ranged', 'Discrete'])
 # Predict Button
