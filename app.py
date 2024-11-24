@@ -57,6 +57,15 @@ def format_indian_number(num):
         formatted_number = other_digits + formatted_number
         return formatted_number + ',' + last_three
     return num_str
+
+def plot_price_chart(price):
+    fig, ax = plt.subplots()
+    ax.plot(price, marker='o')
+    ax.set_title("House Price Prediction")
+    ax.set_ylabel("Price (in ₹)")
+    ax.set_xticks([0])
+    ax.set_xticklabels(["Predicted Price"])
+    st.pyplot(fig)
 # Streamlit app UI
 st.title("House Price Predictor")
 
@@ -103,8 +112,10 @@ if st.button("Predict"):
     # Display results
     if selection == 'Ranged':
         st.write(f"Your House will cost in range: ₹{format_indian_number(round(lower_bound[0], 2))} - ₹{format_indian_number(round(upper_bound[0], 2))}")
+        plot_price_chart([round(lower_bound[0], 2), round(upper_bound[0], 2)])
     elif selection == 'Discrete':
         st.write(f"Estimated Cost of the House will be: ₹{format_indian_number(round(prediction, 2))}")
+        plot_price_chart([round(prediction, 2)])
 
 
 # Feedback section
