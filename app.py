@@ -112,18 +112,6 @@ if st.button("Predict"):
       
 
 
-# Feedback section
-'''with st.popover("### We Value Your Feedback!"):
-    feedback = st.text_area("Please provide your feedback below:")
-    if st.button("Submit Feedback"):
-        if feedback:
-            st.write("Thank you for your feedback!")
-            with open("feedback.txt", "a") as f:
-                f.write(feedback + "\n\n")
-        else:
-            st.write("Please enter your feedback before submitting.")'''
-
-
 st.header("FAQs:")
 with st.expander("What is Ranged Prediction?"):
     st.write("Ranged Prediction provides a price range estimate, showing both minimum and maximum values for better decision-making.")
