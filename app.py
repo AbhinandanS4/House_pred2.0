@@ -88,6 +88,8 @@ user_data = pd.DataFrame({
 
 st.dataframe(user_data)
 selection = st.selectbox("Select Your Prediction Type", ['Ranged', 'Discrete'])
+with st.expander("What is Ranged Prediction?"):
+    st.write("Ranged Prediction provides a price range estimate, showing both minimum and maximum values for better decision-making.")
 # Predict button
 if st.button("Predict"):
     # Encode user input using the same label encoders
