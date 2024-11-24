@@ -122,6 +122,8 @@ if st.button("Submit Feedback"):
             f.write(feedback + "\n\n")
     else:
         st.write("Please enter your feedback before submitting.")
+st.write("Please Rate Our App!!")
+st.feedback(options="faces")
 
 st.header("FAQs:")
 with st.expander("What is Ranged Prediction?"):
