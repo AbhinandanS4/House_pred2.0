@@ -88,9 +88,7 @@ user_data = pd.DataFrame({
 
 st.dataframe(user_data)
 selection = st.selectbox("Select Your Prediction Type", ['Ranged', 'Discrete'])
-with st.expander("What is Ranged Prediction?"):
-    st.write("Ranged Prediction provides a price range estimate, showing both minimum and maximum values for better decision-making.")
-# Predict button
+# Predict Button
 if st.button("Predict"):
     # Encode user input using the same label encoders
     user_data['mainroad'] = le_mainroad.transform(user_data['mainroad'])
@@ -100,7 +98,7 @@ if st.button("Predict"):
 
     # Make prediction
     prediction = model.predict(user_data)[0]
-    lower_bound, upper_bound = lr_prediction_range(model, user_data)
+    lower_bound, upper_bound = lr_prediction_ran;ge(model, user_data)
 
     # Display results
     if selection == 'Ranged':
@@ -119,3 +117,10 @@ if st.button("Submit Feedback"):
             f.write(feedback + "\n\n")
     else:
         st.write("Please enter your feedback before submitting.")
+
+st.head("FAQs:")
+with st.expander("What is Ranged Prediction?"):
+    st.write("Ranged Prediction provides a price range estimate, showing both minimum and maximum values for better decision-making.")
+with st.expander("What is Discrete Prediction?"):
+    st.write("Discrete Prediction provides the exact estimated price. This type of prediction can be in accurate due to multiple factors affecting the outcome in real world situations.")
+
