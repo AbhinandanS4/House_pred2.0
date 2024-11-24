@@ -129,6 +129,7 @@ if st.button("Predict"):
       
 
 # Create a form
+st.divider()
 if st.button("Please Add Your Feedback"):
     feedback_form()
    
