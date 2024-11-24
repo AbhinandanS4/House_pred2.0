@@ -98,7 +98,7 @@ if st.button("Predict"):
 
     # Make prediction
     prediction = model.predict(user_data)[0]
-    lower_bound, upper_bound = lr_prediction_ran;ge(model, user_data)
+    lower_bound, upper_bound = lr_prediction_range(model, user_data)
 
     # Display results
     if selection == 'Ranged':
