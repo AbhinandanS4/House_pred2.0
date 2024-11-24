@@ -129,7 +129,7 @@ if st.button("Predict"):
       
 
 # Create a form
-if st.button("Feedback"):
+if st.button("Please Add Your Feedback"):
     feedback_form()
    
 st.header("FAQs:")
