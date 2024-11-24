@@ -112,7 +112,9 @@ if st.button("Predict"):
       
 
 # Create a form
-with st.expander("Please Give your Valuable Feedback!!"):
+if st.button("Feedback"):
+with st.modal("Feedback Form"):
+    st.write("We Value Your Feedback!!")
     with st.form(key="feedback_form"):
         name = st.text_input("Name (Optional)")
         email = st.text_input("Email (Optional)")
