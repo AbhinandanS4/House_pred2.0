@@ -89,7 +89,7 @@ user_data = pd.DataFrame({
     'furnishingstatus': [furnishingstatus]
 })
 
-st.dataframe(user_data)
+st.dataframe(user_data,hide_index=True)
 selection = st.selectbox("Select Your Prediction Type", ['Ranged', 'Discrete'])
 # Predict Button
 if st.button("Predict"):
