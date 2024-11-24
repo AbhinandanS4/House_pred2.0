@@ -58,6 +58,24 @@ def format_indian_number(num):
         formatted_number = other_digits + formatted_number
         return formatted_number + ',' + last_three
     return num_str
+@st.dialog("We Value Your Feedback")
+def feedback_form():
+    with st.form(key="feedback_form"):
+        name = st.text_input("Name (Optional)")
+        email = st.text_input("Email (Optional)")
+        feedback = st.text_area("Your Feedback")
+        rating = st.slider("Rate our service", 1, 5, 3)
+        
+            # Submit button
+        submitted = st.form_submit_button("Submit Feedback")
+        
+        # Process form submission
+    if submitted:
+        st.success("Thank you for your feedback!")
+        modal.close()
+            # Optional: Save the feedback to a file or database
+        with open("feedback.txt", "a") as f:
+            f.write(f"Name: {name}\nEmail: {email}\nFeedback: {feedback}\nRating: {rating}\n\n")
 
 
 # Streamlit app UI
@@ -113,23 +131,8 @@ if st.button("Predict"):
 
 # Create a form
 if st.button("Feedback"):
-    @st.dialog("We Value Your Feedback")
-        with st.form(key="feedback_form"):
-            name = st.text_input("Name (Optional)")
-            email = st.text_input("Email (Optional)")
-            feedback = st.text_area("Your Feedback")
-            rating = st.slider("Rate our service", 1, 5, 3)
-        
-            # Submit button
-            submitted = st.form_submit_button("Submit Feedback")
-        
-        # Process form submission
-        if submitted:
-            st.success("Thank you for your feedback!")
-            # Optional: Save the feedback to a file or database
-            with open("feedback.txt", "a") as f:
-                f.write(f"Name: {name}\nEmail: {email}\nFeedback: {feedback}\nRating: {rating}\n\n")
-
+    feedback_form()
+   
 st.header("FAQs:")
 with st.expander("What is Ranged Prediction?"):
     st.write("Ranged Prediction provides a price range estimate, showing both minimum and maximum values for better decision-making.")
