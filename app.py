@@ -113,8 +113,7 @@ if st.button("Predict"):
 
 # Create a form
 if st.button("Feedback"):
-    @st.dialog feedback_form():
-        st.write("We Value Your Feedback!!")
+    @st.dialog("We Value Your Feedback")
         with st.form(key="feedback_form"):
             name = st.text_input("Name (Optional)")
             email = st.text_input("Email (Optional)")
