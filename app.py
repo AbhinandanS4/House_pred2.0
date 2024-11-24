@@ -113,15 +113,15 @@ if st.button("Predict"):
 
 
 # Feedback section
-st.write("### We Value Your Feedback!")
-feedback = st.text_area("Please provide your feedback below:")
-if st.button("Submit Feedback"):
-    if feedback:
-        st.write("Thank you for your feedback!")
-        with open("feedback.txt", "a") as f:
-            f.write(feedback + "\n\n")
-    else:
-        st.write("Please enter your feedback before submitting.")
+with st.popover("### We Value Your Feedback!"):
+    feedback = st.text_area("Please provide your feedback below:")
+    if st.button("Submit Feedback"):
+        if feedback:
+            st.write("Thank you for your feedback!")
+            with open("feedback.txt", "a") as f:
+                f.write(feedback + "\n\n")
+        else:
+            st.write("Please enter your feedback before submitting.")
 
 
 st.header("FAQs:")
