@@ -59,7 +59,7 @@ def format_indian_number(num):
     return num_str
 # Streamlit app UI
 st.title("House Price Predictor")
-selection = st.selectbox("Select Your Prediction Type", ['Ranged', 'Discrete'])
+
 
 # Collecting user input
 st.write("Please Select The Features of Your House")
@@ -87,7 +87,7 @@ user_data = pd.DataFrame({
 })
 
 st.dataframe(user_data)
-
+selection = st.selectbox("Select Your Prediction Type", ['Ranged', 'Discrete'])
 # Predict button
 if st.button("Predict"):
     # Encode user input using the same label encoders
