@@ -118,7 +118,7 @@ if st.button("Submit Feedback"):
     else:
         st.write("Please enter your feedback before submitting.")
 
-st.head("FAQs:")
+st.header("FAQs:")
 with st.expander("What is Ranged Prediction?"):
     st.write("Ranged Prediction provides a price range estimate, showing both minimum and maximum values for better decision-making.")
 with st.expander("What is Discrete Prediction?"):
