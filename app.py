@@ -113,21 +113,22 @@ if st.button("Predict"):
 st.title("Feedback Form")
 
 # Create a form
-with st.form(key="feedback_form"):
-    name = st.text_input("Name (Optional)")
-    email = st.text_input("Email (Optional)")
-    feedback = st.text_area("Your Feedback")
-    rating = st.slider("Rate our service", 1, 5, 3)
-
-    # Submit button
-    submitted = st.form_submit_button("Submit Feedback")
-
-# Process form submission
-if submitted:
-    st.success("Thank you for your feedback!")
-    # Optional: Save the feedback to a file or database
-    with open("feedback.txt", "a") as f:
-        f.write(f"Name: {name}\nEmail: {email}\nFeedback: {feedback}\nRating: {rating}\n\n")
+with st.expander("Please Give your Valuable Feedback!!"):
+    with st.form(key="feedback_form"):
+        name = st.text_input("Name (Optional)")
+        email = st.text_input("Email (Optional)")
+        feedback = st.text_area("Your Feedback")
+        rating = st.slider("Rate our service", 1, 5, 3)
+    
+        # Submit button
+        submitted = st.form_submit_button("Submit Feedback")
+    
+    # Process form submission
+    if submitted:
+        st.success("Thank you for your feedback!")
+        # Optional: Save the feedback to a file or database
+        with open("feedback.txt", "a") as f:
+            f.write(f"Name: {name}\nEmail: {email}\nFeedback: {feedback}\nRating: {rating}\n\n")
 
 st.header("FAQs:")
 with st.expander("What is Ranged Prediction?"):
