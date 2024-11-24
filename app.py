@@ -122,12 +122,12 @@ if st.button("Submit Feedback"):
             f.write(feedback + "\n\n")
     else:
         st.write("Please enter your feedback before submitting.")
-st.write("Please Rate Our App!!")
-st.feedback(options="faces")
+
 
 st.header("FAQs:")
 with st.expander("What is Ranged Prediction?"):
     st.write("Ranged Prediction provides a price range estimate, showing both minimum and maximum values for better decision-making.")
 with st.expander("What is Discrete Prediction?"):
     st.write("Discrete Prediction provides the exact estimated price. This type of prediction can be in accurate due to multiple factors affecting the outcome in real world situations.")
-
+st.write("Please Rate Our App!!")
+st.feedback(options="faces")
