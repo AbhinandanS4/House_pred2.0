@@ -145,4 +145,24 @@ with st.expander("How do these predictions work?"):
 st.divider()
 st.write("Please Rate Our App!!")
 st.feedback(options="faces")
+linkedin_url="https://www.linkedin.com/in/abhinandan-saini-618339316/"
+st.markdown(
+    f"""
+    <a href="{linkedin_url}" target="_blank">
+        <button style="
+            background-color: #0A66C2;
+            color: white;
+            padding: 15px 32px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        ">
+            Visit My LinkedIn Profile
+        </button>
+    </a>
+    """, unsafe_allow_html=True
+)
 st.divider()
