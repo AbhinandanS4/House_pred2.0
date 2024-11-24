@@ -72,7 +72,6 @@ def feedback_form():
         # Process form submission
     if submitted:
         st.success("Thank you for your feedback!")
-        modal.close()
             # Optional: Save the feedback to a file or database
         with open("feedback.txt", "a") as f:
             f.write(f"Name: {name}\nEmail: {email}\nFeedback: {feedback}\nRating: {rating}\n\n")
