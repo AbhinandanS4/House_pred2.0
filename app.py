@@ -143,6 +143,6 @@ with st.expander("How do these predictions work?"):
     st.write("To provide a ranged prediction, we can calculate confidence intervals around the point estimate. This interval represents a range of values within which the true house price is likely to fall with a certain level of confidence.")
     st.write("For discrete predictions, we can use techniques like rounding the predicted price to the nearest thousand dollars or assigning it to predefined price categories (e.g., affordable, mid-range, luxury). While linear regression provides a solid foundation for house price prediction, it's important to consider its limitations, such as the assumption of linearity and the potential impact of outliers.")
 st.divider()
-st.divider()
 st.write("Please Rate Our App!!")
 st.feedback(options="faces")
+st.divider()
