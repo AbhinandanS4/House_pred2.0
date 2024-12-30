@@ -137,7 +137,7 @@ st.header("FAQs:")
 with st.expander("What is Ranged Prediction?"):
     st.write("Ranged Prediction provides a price range estimate, showing both minimum and maximum values for better decision-making.")
 with st.expander("What is Discrete Prediction?"):
-    st.write("Discrete Prediction provides the exact estimated price. This type of prediction can be in accurate due to multiple factors affecting the outcome in real world situations.")
+    st.write("Discrete Prediction provides the exact estimated price. This type of prediction can be inaccurate due to multiple factors affecting the outcome in real world situations.")
 with st.expander("How do these predictions work?"):
     st.write("This model uses Linear regression which is a statistical method used to model the relationship between a dependent variable (house price) and one or more independent variables (e.g., square footage, number of bedrooms, location). It assumes a linear relationship, meaning the change in price is proportional to the change in the independent variables. By analyzing historical data, the model learns the coefficients (weights) for each independent variable, allowing it to predict the price of a new house based on its features.")
     st.write("To provide a ranged prediction, we can calculate confidence intervals around the point estimate. This interval represents a range of values within which the true house price is likely to fall with a certain level of confidence.")
